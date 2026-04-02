@@ -10,6 +10,12 @@ type BikePageProps = {
   }>;
 };
 
+export function generateStaticParams() {
+  return bikes.map((bike) => ({
+    slug: bike.slug,
+  }));
+}
+
 export default async function BikeDetailsPage({ params }: BikePageProps) {
   const { slug } = await params;
   const bike = bikes.find((item) => item.slug === slug);
@@ -23,9 +29,9 @@ export default async function BikeDetailsPage({ params }: BikePageProps) {
     .slice(0, 3);
 
   const galleryImages =
-  "images" in bike && Array.isArray(bike.images) && bike.images.length > 0
-    ? bike.images
-    : [bike.image];
+    "images" in bike && Array.isArray(bike.images) && bike.images.length > 0
+      ? bike.images
+      : [bike.image];
 
   return (
     <main className="min-h-screen relative overflow-hidden px-4 py-6 md:px-8 md:py-10">
@@ -220,7 +226,10 @@ export default async function BikeDetailsPage({ params }: BikePageProps) {
 
                 <div className="rounded-2xl bg-white/10 p-4">
                   <p className="text-sm text-white/70">Ціна</p>
-                  <PriceTag price={bike.price} className="mt-1 text-lg font-semibold" />
+                  <PriceTag
+                    price={bike.price}
+                    className="mt-1 text-lg font-semibold"
+                  />
                 </div>
 
                 <div className="rounded-2xl bg-white/10 p-4">
