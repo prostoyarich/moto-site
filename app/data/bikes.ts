@@ -75,9 +75,9 @@ export const bikes = [
     brand: "Yamaha",
     price: "$12 500",
     image:
-      "https://images.unsplash.com/photo-1611242320536-f12d3541249b?q=80&w=1200",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStrR5pctUnQQ3QO6Ys0xtlAZTJEW0ZI1YiEg&s",
     images: [
-      "https://images.unsplash.com/photo-1611242320536-f12d3541249b?q=80&w=1200",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStrR5pctUnQQ3QO6Ys0xtlAZTJEW0ZI1YiEg&s",
     ],
     slug: "yamaha-r6",
     description:
