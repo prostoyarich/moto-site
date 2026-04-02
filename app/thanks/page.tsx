@@ -1,48 +1,103 @@
-"use client";
-
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-
 export default function ThanksPage() {
-  const searchParams = useSearchParams();
-  const bike = searchParams.get("bike") || "обраного мотоцикла";
-
   return (
-    <main className="min-h-screen flex items-center justify-center px-4 py-10">
-      <section className="w-full max-w-3xl rounded-[32px] border border-white/50 bg-white/80 p-8 text-center shadow-2xl backdrop-blur-md md:p-12">
-        <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-100 text-4xl">
-          ✅
-        </div>
+    <main
+      style={{
+        minHeight: "100vh",
+        padding: "32px 16px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background:
+          "linear-gradient(135deg, #ffffff 0%, #dbeafe 50%, #bfdbfe 100%)",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: "720px",
+          width: "100%",
+          background: "rgba(255,255,255,0.9)",
+          border: "1px solid rgba(255,255,255,0.7)",
+          borderRadius: "28px",
+          boxShadow: "0 20px 50px rgba(0,0,0,0.12)",
+          padding: "48px 32px",
+          textAlign: "center",
+        }}
+      >
+        <div style={{ fontSize: "56px" }}>✅</div>
 
-        <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-green-600">
+        <p
+          style={{
+            marginTop: "16px",
+            color: "#15803d",
+            fontWeight: 600,
+            fontSize: "14px",
+          }}
+        >
           RideX Motors
         </p>
 
-        <h1 className="text-4xl font-black text-gray-900 md:text-5xl">
-          Дякуємо за замовлення
+        <h1
+          style={{
+            marginTop: "16px",
+            fontSize: "42px",
+            fontWeight: 900,
+            color: "#111827",
+          }}
+        >
+          Дякуємо за заявку!
         </h1>
 
-        <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-gray-700">
-          Ваша заявка на <span className="font-semibold">{bike}</span> успішно
-          оформлена. Наш менеджер скоро зв’яжеться з вами для уточнення деталей.
+        <p
+          style={{
+            marginTop: "20px",
+            fontSize: "18px",
+            lineHeight: 1.7,
+            color: "#4b5563",
+          }}
+        >
+          Ваше замовлення успішно оформлено. Найближчим часом ми зв’яжемося
+          з вами для уточнення деталей.
         </p>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Link
+        <div
+          style={{
+            marginTop: "32px",
+            display: "flex",
+            gap: "16px",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <a
             href="/catalog"
-            className="rounded-xl bg-red-600 px-6 py-3 font-semibold text-white shadow-lg transition hover:bg-red-700"
+            style={{
+              background: "#dc2626",
+              color: "white",
+              textDecoration: "none",
+              padding: "14px 24px",
+              borderRadius: "16px",
+              fontWeight: 700,
+            }}
           >
-            До каталогу
-          </Link>
+            Повернутись до каталогу
+          </a>
 
-          <Link
+          <a
             href="/"
-            className="rounded-xl border border-gray-300 bg-white px-6 py-3 font-semibold text-gray-900 transition hover:bg-gray-100"
+            style={{
+              background: "white",
+              color: "#111827",
+              textDecoration: "none",
+              padding: "14px 24px",
+              borderRadius: "16px",
+              fontWeight: 700,
+              border: "1px solid #d1d5db",
+            }}
           >
             На головну
-          </Link>
+          </a>
         </div>
-      </section>
+      </div>
     </main>
   );
 }
